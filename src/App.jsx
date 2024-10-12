@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./layout/Layout"; // Adjust path based on your structure
-import Home from "./pages/Home"; // Import your page components
-import MovieDetails from "./pages/MovieDetails"; // Another example of a page
+import Layout from "./layout/Layout";
+import Home from "./pages/Home";
+import MovieDetails from "./pages/MovieDetails";
 
 const App = () => {
   return (

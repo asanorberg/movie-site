@@ -16,12 +16,11 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
 
 const MovieDetails = () => {
-  const { id } = useParams(); // Get the movie ID from the URL
+  const { id } = useParams(); // Hämta film via URL baserat på id
   const [movie, setMovie] = useState(null);
   const [credits, setCredits] = useState(null);
 
   useEffect(() => {
-    // Fetch movie details and credits from TMDb
     const fetchMovieDetails = async () => {
       try {
         const movieResponse = await fetch(
@@ -62,7 +61,15 @@ const MovieDetails = () => {
 
       {/* Movie Details */}
       <div className="md:w-1/2 text-white">
-        <h1 className="text-3xl m-0">{movie.title}</h1>
+        <span className="flex items-center justify-between">
+          <h1 className="text-3xl m-0">{movie.title}</h1>
+          <button className="flex bg-transparent border-none rounded-lg text-lightpurple">
+            <GoHeart
+              className="text-3xl opacity-70 hover:cursor-pointer"
+              alt="add to favorites"
+            />
+          </button>
+        </span>
         <h3 className="text-xl font-thin opacity-40 mt-0 tracking-wide">
           {movie.release_date.split("-")[0]}
         </h3>
