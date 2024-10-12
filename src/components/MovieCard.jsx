@@ -22,11 +22,11 @@ const MovieCard = ({ movie }) => {
         <img
           src={posterUrl}
           alt={movie.title}
-          className="w-full object-cover mb-4 rounded-t-lg"
+          className="w-full object-coverrounded-t-lg pb-0"
         />
-        <div className="flex flex-col text-left">
+        <div className="flex flex-col text-left p-4 mt-0">
           {" "}
-          <h2 className="text-white font-thin text-[18px] mb-2">
+          <h2 className="text-white font-thin text-[18px] mb-2 mt-0">
             {movie.title}
           </h2>
           <span className="flex text-md just gap-3 text-darkyellow">
@@ -37,11 +37,11 @@ const MovieCard = ({ movie }) => {
               <GoStarFill /> <GoStar />
               <GoStar />
             </div>{" "}
-            {movie.vote_average}
+            {movie.vote_average.toFixed(1)}
           </span>
-          <div className="mt-4 gap-1 flex flex-col text-sm tracking-wide">
+          <div className="mt-4 flex flex-col text-sm tracking-wide">
             <span>
-              <p className="flex items-center text-white gap-2">
+              <p className="flex items-center text-white gap-2 m-0">
                 <GoCalendar className=" text-darkyellow" />
 
                 {movie.release_date
@@ -50,7 +50,7 @@ const MovieCard = ({ movie }) => {
               </p>{" "}
             </span>{" "}
             <span>
-              <p className="flex items-center text-white gap-2">
+              <p className="flex items-center text-white gap-2  m-0">
                 <GoUnmute className=" text-darkyellow" />
                 {movie.original_language.toUpperCase()}
               </p>
