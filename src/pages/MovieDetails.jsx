@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Button from "../components/Button";
 import {
-  GoHeart,
-  GoHeartFill,
   GoStar,
   GoStarFill,
   GoCalendar,
@@ -11,6 +9,7 @@ import {
   GoUnmute,
   GoGlobe,
 } from "react-icons/go";
+import FavoriteButton from "../components/FavoriteButton";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -63,12 +62,7 @@ const MovieDetails = () => {
       <div className="md:w-1/2 text-white">
         <span className="flex items-center justify-between">
           <h1 className="text-3xl m-0">{movie.title}</h1>
-          <button className="flex bg-transparent border-none rounded-lg text-lightpurple">
-            <GoHeart
-              className="text-3xl opacity-70 hover:cursor-pointer"
-              alt="add to favorites"
-            />
-          </button>
+          <FavoriteButton movie={movie} />
         </span>
         <h3 className="text-xl font-thin opacity-40 mt-0 tracking-wide">
           {movie.release_date.split("-")[0]}
