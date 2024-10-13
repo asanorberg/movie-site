@@ -20,7 +20,7 @@ const Search = ({}) => {
     <div className="flex items-center gap-4">
       <form
         onSubmit={handleSearch}
-        className="flex w-fit h-12  rounded-full border-solid border-[1px] border-lightpurple bg-darkerpurple px-4"
+        className="flex items-center  h-10 rounded-full border-solid border-[1px] border-lightpurple bg-darkerpurple px-4"
       >
         <input
           type="text"
@@ -29,8 +29,9 @@ const Search = ({}) => {
           className="bg-transparent border-none text-white focus:outline-none px-2 transition-all focus:w-60"
         />
         <button
+          onClick={handleSearch}
           type="submit"
-          className="bg-transparent border-none text-2xl text-lightpurple m-0"
+          className="flex bg-transparent border-none text-2xl text-lightpurple hover:cursor-pointer "
         >
           <GoSearch />
         </button>
