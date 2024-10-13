@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import MovieDetails from "./pages/MovieDetails";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 const App = () => {
   return (

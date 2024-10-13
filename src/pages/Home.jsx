@@ -1,22 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { getPopularMovies } from "../services/movieService";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPopularMovies } from "../features/movies/movieSlice";
 import MovieCard from "../components/MovieCard";
 
 const Home = () => {
-  const [movies, setMovies] = useState([]);
+  const dispatch = useDispatch();
+  const { movies, loading, error } = useSelector((state) => state.movies);
 
   useEffect(() => {
-    const getData = async () => {
-      try {
-        const fetchedMovies = await getPopularMovies();
-        setMovies(fetchedMovies);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
+    dispatch(fetchPopularMovies());
+  }, [dispatch]);
 
-    getData();
-  }, []);
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div>
