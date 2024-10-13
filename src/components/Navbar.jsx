@@ -20,9 +20,12 @@ function Navbar() {
       </Link>
       <span className="flex items-center gap-4">
         <Search />
-        <button className="bg-transparent border-none text-3xl text-lightpurple m-0 hover:cursor-pointer">
+        <Link
+          to="/favorites"
+          className="bg-transparent border-none text-3xl text-lightpurple m-0 hover:cursor-pointer"
+        >
           <GoHeartFill />
-        </button>{" "}
+        </Link>{" "}
       </span>
     </div>
   );

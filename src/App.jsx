@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import MovieDetails from "./pages/MovieDetails";
-import { Provider } from "react-redux";
-import store from "./store/store";
+import Favorites from "./pages/Favorites";
 
 const App = () => {
   return (
@@ -13,6 +12,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movie/:id" element={<MovieDetails />} />
+          <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </Layout>
     </Router>
