@@ -29,8 +29,7 @@ async function fetchDynamicPaths() {
       method: "GET",
       headers: {
         accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OGU5YjNlMmY0Nzc0MDk2ZTMwYzk1NGU5YzVhZmZkYiIsIm5iZiI6MTcyODczMTE5NS4wNjE4MDMsInN1YiI6IjY3MGE1MTcwMzdkODZkNTIwYmIwNjkyMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.dLGRzhLshjusxvGM8tGhxeLXvxZhIwYC4lxnk0E_zzw",
+        Authorization: `Bearer ${process.env.VITE_API_KEY}`,
       },
     });
 
