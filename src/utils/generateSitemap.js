@@ -2,9 +2,8 @@ import { SitemapStream, streamToPromise } from "sitemap";
 import { createWriteStream } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import fetch from "node-fetch"; // Ensure to install node-fetch
 
-const BASE_URL = "https://yourdomain.com/";
+const BASE_URL = "https://movie-site-orpin.vercel.app/";
 
 const staticPaths = [
   { url: "/", changefreq: "daily", priority: 1.0 },
@@ -29,7 +28,8 @@ async function fetchDynamicPaths() {
       method: "GET",
       headers: {
         accept: "application/json",
-        Authorization: `Bearer ${process.env.VITE_API_KEY}`,
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OGU5YjNlMmY0Nzc0MDk2ZTMwYzk1NGU5YzVhZmZkYiIsIm5iZiI6MTcyODczMTE5NS4wNjE4MDMsInN1YiI6IjY3MGE1MTcwMzdkODZkNTIwYmIwNjkyMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.dLGRzhLshjusxvGM8tGhxeLXvxZhIwYC4lxnk0E_zzw",
       },
     });
 
