@@ -21,8 +21,9 @@ function Navbar() {
       <span className="flex items-center gap-4">
         <Search />
         <Link
+          title="Go to favorites"
           to="/favorites"
-          className="bg-transparent border-none text-3xl text-lightpurple m-0 hover:cursor-pointer"
+          className="bg-transparent border-none text-3xl text-lightpink opacity-80 m-0 hover:cursor-pointer"
         >
           <GoHeartFill />
         </Link>{" "}
