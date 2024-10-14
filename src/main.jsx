@@ -11,8 +11,6 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <HelmetProvider>
       <Provider store={store}>
-        {" "}
-        {/* Wrap App with Provider and pass in the store */}
         <App />
       </Provider>
     </HelmetProvider>
