@@ -23,7 +23,7 @@ const FavoriteButton = ({ movie }) => {
   return (
     <button
       onClick={handleToggleFavorite}
-      className="text-lightpurple p-0 border-none bg-transparent hover:cursor-pointer"
+      className="add-to-favorites-btn text-lightpurple p-0 border-none bg-transparent hover:cursor-pointer"
       title="Toggle favorite button"
     >
       {isFavorite ? <GoHeartFill size={24} /> : <GoHeart size={24} />}
