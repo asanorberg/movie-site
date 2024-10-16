@@ -19,7 +19,7 @@ describe("Add Movie to Favorites", () => {
     cy.get("h2").contains("Despicable"); // Assuming the movie title is rendered here
 
     // Click the favorite button to add the movie to favorites
-    cy.get(".add-to-favorites-btn").first.click();
+    cy.get(".add-to-favorites-btn").first().click();
 
     // Navigate to the favorites page
     cy.visit("/favorites");
