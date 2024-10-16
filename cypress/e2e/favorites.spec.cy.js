@@ -3,7 +3,7 @@
 describe("Favorites Page", () => {
   it("should load the favorites page", () => {
     cy.visit("/favorites"); // Adjust the URL based on your routing setup
-    cy.get("h2").contains("My favorites");
+    cy.get("h2").contains("My Favorites");
     cy.url().should("include", "/favorites");
   });
 });
