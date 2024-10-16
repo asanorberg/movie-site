@@ -12,15 +12,25 @@ describe("Favorites Page", () => {
 
 describe("Add Movie to Favorites", () => {
   it("should add a movie to favorites", () => {
-    cy.visit("/"); // Visit the homepage or the page where the movie can be added
+    // Visit the movie page
+    cy.visit("/movie/519182"); // Adjust the movie ID based on your app's routing
 
-    // Replace `.favorite-button` with the actual class or selector of your Favorite button
-    cy.get(".add-to-favorites-btn").first().click(); // Click the first favorite button found
+    // Ensure the movie page is loaded by checking for the movie title or any other unique element
+    cy.get("h2").contains("Despicable"); // Assuming the movie title is rendered here
 
-    cy.visit("/favorites"); // Visit the favorites page
-    cy.contains("My Favorites"); // Check that you are on the favorites page
+    // Click the favorite button to add the movie to favorites
+    cy.get(".add-to-favorites-btn").first.click();
 
-    // Ensure the movie is present in the favorites
-    cy.get(".favorite-active").should("have.length.greaterThan", 0); // Replace with your selector for favorite movies
+    // Navigate to the favorites page
+    cy.visit("/favorites");
+
+    // Check that you are on the favorites page and the title is present
+    cy.contains("My Favorites");
+
+    // Verify the movie is present in the favorites list
+    cy.get("h2").contains("Despicable");
+
+    // Ensure the movie is favorited (using the `favorite-active` class)
+    cy.get(".favorite-active").should("exist");
   });
 });
