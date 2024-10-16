@@ -16,7 +16,7 @@ describe("Add Movie to Favorites", () => {
     cy.visit("/movie/519182"); // Adjust the movie ID based on your app's routing
 
     // Ensure the movie page is loaded by checking for the movie title or any other unique element
-    cy.get("h2").contains("Despicable"); // Assuming the movie title is rendered here
+    cy.get("h1").contains("Despicable"); // Assuming the movie title is rendered here
 
     // Click the favorite button to add the movie to favorites
     cy.get(".add-to-favorites-btn").first().click();
@@ -28,7 +28,7 @@ describe("Add Movie to Favorites", () => {
     cy.contains("My Favorites");
 
     // Verify the movie is present in the favorites list
-    cy.get("h2").contains("Despicable");
+    cy.get(".movie-card h2").contains("Despicable");
 
     // Ensure the movie is favorited (using the `favorite-active` class)
     cy.get(".favorite-active").should("exist");

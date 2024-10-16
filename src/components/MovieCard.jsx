@@ -16,7 +16,7 @@ const MovieCard = ({ movie }) => {
     : "https://via.placeholder.com/500x750?text=No+Poster";
 
   return (
-    <div className="bg-darkpurple  text-white w-[300px] h-fit rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+    <div className="movie-card bg-darkpurple  text-white w-[300px] h-fit rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
       <Link className="no-underline" to={`/movie/${movie.id}`}>
         <img
           src={posterUrl}
