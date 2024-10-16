@@ -8,12 +8,13 @@ import {
   GoUnmute,
 } from "react-icons/go";
 import FavoriteButton from "./FavoriteButton";
+import moviesite_logo from "../assets/moviesite_logo.png";
 
 const MovieCard = ({ movie }) => {
   const imageUrl = "https://image.tmdb.org/t/p/w300";
   const posterUrl = movie.poster_path
     ? `${imageUrl}${movie.poster_path}`
-    : "https://via.placeholder.com/500x750?text=No+Poster";
+    : moviesite_logo;
 
   return (
     <div className="movie-card bg-darkpurple  text-white w-[300px] h-fit rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
@@ -21,7 +22,9 @@ const MovieCard = ({ movie }) => {
         <img
           src={posterUrl}
           alt={movie.title}
-          className="w-full object-coverrounded-t-lg pb-0"
+          className={`w-full object-cover rounded-t-lg pb-0 ${
+            !movie.poster_path ? "fallback-image" : ""
+          }`}
         />
       </Link>
       <div className="flex flex-col text-left p-4 mt-0">

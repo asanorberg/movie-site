@@ -26,7 +26,8 @@ const Search = ({}) => {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="bg-transparent border-none text-white focus:outline-none px-2 transition-all focus:w-60"
+          className="bg-transparent text-center w-[460px]  border-none text-white focus:outline-none px-2 transition-all"
+          placeholder="Search movies..."
         />
         <button
           onClick={handleSearch}

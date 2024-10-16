@@ -16,3 +16,8 @@ body {
 main {
   margin: 0 auto;
 }
+
+.fallback-image {
+  padding: 100px 0px 100px 0px;
+  opacity: 25%;
+}
