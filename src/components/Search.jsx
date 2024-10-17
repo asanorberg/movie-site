@@ -20,13 +20,13 @@ const Search = ({}) => {
     <div className="flex items-center gap-4">
       <form
         onSubmit={handleSearch}
-        className="flex items-center  h-10 rounded-full border-solid border-[1px] border-lightpurple bg-darkerpurple px-4"
+        className="flex my-4 md:my-0 items-center h-10 rounded-full border-solid border-[1px] border-lightpurple bg-darkerpurple px-4"
       >
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="bg-transparent text-center w-[460px]  border-none text-white focus:outline-none px-2 transition-all"
+          className="bg-transparent text-center w-full sm:w-[16rem] md:w-[24rem] lg:w-[30rem] xl:w-[36rem] border-none text-white focus:outline-none px-2 transition-all"
           placeholder="Search movies..."
         />
         <button

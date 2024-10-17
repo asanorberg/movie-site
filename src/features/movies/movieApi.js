@@ -1,10 +1,10 @@
-const API_URL = "https://api.themoviedb.org/3"; // Base URL for API
-const API_KEY = import.meta.env.VITE_API_KEY; // Your API key
+const API_URL = "https://api.themoviedb.org/3";
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export const fetchPopularMoviesAPI = async () => {
   const response = await fetch(`${API_URL}/movie/popular?api_key=${API_KEY}`);
   const data = await response.json();
-  return data.results; // Return only the movie results
+  return data.results;
 };
 
 export const searchMoviesAPI = async (query) => {
@@ -14,5 +14,5 @@ export const searchMoviesAPI = async (query) => {
     )}`
   );
   const data = await response.json();
-  return data.results; // Return the search results
+  return data.results;
 };

@@ -35,13 +35,10 @@ const MovieCard = ({ movie }) => {
           </h2>
           <FavoriteButton movie={movie} />
         </div>
-        <span className="flex text-md just gap-3 text-darkyellow">
-          <div className="flex gap-1">
+        <span className="flex text-md just text-darkyellow">
+          <div className="flex mr-1">
             {" "}
             <GoStarFill />
-            <GoStarFill />
-            <GoStarFill /> <GoStar />
-            <GoStar />
           </div>{" "}
           {movie.vote_average.toFixed(1)}
         </span>
