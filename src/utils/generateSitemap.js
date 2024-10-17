@@ -2,7 +2,7 @@ import { SitemapStream, streamToPromise } from "sitemap";
 import { createWriteStream } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import fetch from "node-fetch"; // Ensure to install node-fetch
+import fetch from "node-fetch";
 
 const BASE_URL = "https://movie-site-orpin.vercel.app/";
 

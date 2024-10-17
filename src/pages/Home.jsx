@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>MovieSite | Home</title>
+        <title>MovieSite</title>
         <meta
           name="description"
           content="Browse popular movies and find your new favorites"

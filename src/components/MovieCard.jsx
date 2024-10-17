@@ -7,12 +7,13 @@ import {
   markAsWatched,
   unmarkAsWatched,
 } from "../features/watched/watchedSlice";
+import noPosterImage from "../assets/moviesite_logo.png";
 
 const MovieCard = ({ movie }) => {
   const imageUrl = "https://image.tmdb.org/t/p/w300";
   const posterUrl = movie.poster_path
     ? `${imageUrl}${movie.poster_path}`
-    : "path/to/placeholder-image.jpg";
+    : noPosterImage;
 
   const dispatch = useDispatch();
   const watchedList = useSelector((state) => state.watched.watchedList);
@@ -33,7 +34,9 @@ const MovieCard = ({ movie }) => {
         <img
           src={posterUrl}
           alt={movie.title}
-          className={`w-full object-cover rounded-t-lg pb-0`}
+          className={`w-full object-cover rounded-t-lg pb-0 ${
+            !movie.poster_path ? "fallback-image" : ""
+          }`}
         />
       </Link>
       <div className="flex flex-col text-left p-4 mt-0">

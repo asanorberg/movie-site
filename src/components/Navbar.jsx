@@ -3,9 +3,7 @@ import { GoHeart, GoHeartFill } from "react-icons/go";
 import Search from "./Search";
 import { useDispatch } from "react-redux";
 import { fetchPopularMovies } from "../features/movies/movieSlice";
-import MS_logo from "../assets/moviesite_logo.png";
 import MS_logo1 from "../assets/moviesite_1.png";
-import MS_logo2 from "../assets/moviesite_2.png";
 
 function Navbar() {
   const dispatch = useDispatch();

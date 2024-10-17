@@ -9,7 +9,6 @@ export const fetchPopularMovies = createAsyncThunk(
   }
 );
 
-// Async thunk for searching movies
 export const searchMovies = createAsyncThunk(
   "movies/searchMovies",
   async (query) => {
@@ -28,7 +27,6 @@ const movieSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // Handle popular movies
       .addCase(fetchPopularMovies.pending, (state) => {
         state.loading = true;
       })
@@ -40,13 +38,12 @@ const movieSlice = createSlice({
         state.loading = false;
         state.error = action.error.message;
       })
-      // Handle search movies
       .addCase(searchMovies.pending, (state) => {
         state.loading = true;
       })
       .addCase(searchMovies.fulfilled, (state, action) => {
         state.loading = false;
-        state.movies = action.payload; // Update movies with search results
+        state.movies = action.payload;
       })
       .addCase(searchMovies.rejected, (state, action) => {
         state.loading = false;
