@@ -11,18 +11,6 @@ const staticPaths = [
   { url: "/favorites", changefreq: "weekly", priority: 0.8 },
 ];
 
-// async function fetchDynamicPaths() {
-//   const response = await fetch(
-//     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.VITE_API_KEY}`
-//   );
-//   const data = await response.json();
-//   return data.results.map((movie) => ({
-//     url: `/movies/${movie.id}`,
-//     changefreq: "weekly",
-//     priority: 0.8,
-//   }));
-// }
-
 async function fetchDynamicPaths() {
   try {
     const response = await fetch("https://api.themoviedb.org/3/movie/popular", {

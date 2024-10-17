@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import movieReducer from "../features/movies/movieSlice";
 import favoritesReducer from "../features/favorites/favoritesSlice";
+import watchedReducer from "../features/watched/watchedSlice"; // Import the watched slice
 
 // Funktion för att hämta favoriter från Local Storage
 const getFavoritesFromLocalStorage = () => {
@@ -18,6 +19,7 @@ const store = configureStore({
   reducer: {
     movies: movieReducer,
     favorites: favoritesReducer,
+    watched: watchedReducer,
   },
   preloadedState: {
     favorites: {

@@ -15,6 +15,7 @@ export default {
       white: "#ffffff",
       black: "#000000",
       purplegray: "#37274b",
+      lightblue: "#63c6b9",
     },
     extend: {},
   },
