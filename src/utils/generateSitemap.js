@@ -3,7 +3,7 @@ import { createWriteStream } from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import fetch from "node-fetch";
-const BEARER = import.meta.env.VITE_API_BEARER;
+const BEARER = process.env.VITE_API_BEARER || import.meta.env.VITE_API_BEARER;
 
 const BASE_URL = "https://movie-site-orpin.vercel.app/";
 
