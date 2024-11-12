@@ -16,13 +16,13 @@ const MovieCard = ({ movie }) => {
     : noPosterImage;
 
   const dispatch = useDispatch();
-  const watchedList = useSelector((state) => state.watched.watchedList);
+  const watchedList = useSelector((state) => state.watched.watchedList); // Hämtar listan av watched filmer
 
   const handleToggleWatched = () => {
     if (watchedList.includes(movie.id)) {
-      dispatch(unmarkAsWatched(movie.id));
+      dispatch(unmarkAsWatched(movie.id)); // Om filmen redan är markerad som watched, dispatch action för att ta bort den från listan
     } else {
-      dispatch(markAsWatched(movie.id));
+      dispatch(markAsWatched(movie.id)); //Else, dispatch action för att markera som watched
     }
   };
 
@@ -44,7 +44,7 @@ const MovieCard = ({ movie }) => {
           <h2 className="text-white font-thin text-[18px] mb-2 mt-0">
             {movie.title}
           </h2>
-          <FavoriteButton movie={movie} />
+          <FavoriteButton movie={movie} /> {/* Lägg till som favorit knapp  */}
         </div>
         <span className="flex text-md text-darkyellow">
           <div className="flex mr-1">
@@ -69,6 +69,8 @@ const MovieCard = ({ movie }) => {
           </span>
         </div>
         <div className="flex flex-row-reverse">
+          {" "}
+          {/* Toggla watched knapp  */}
           <button
             title="Toggle watched button"
             onClick={handleToggleWatched}

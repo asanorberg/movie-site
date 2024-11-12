@@ -11,7 +11,7 @@ const Search = ({}) => {
   const handleSearch = (e) => {
     e.preventDefault();
     if (query.trim()) {
-      dispatch(searchMovies(query));
+      dispatch(searchMovies(query)); //Dispatch action searchMovies med query som argument
       setQuery("");
     }
   };

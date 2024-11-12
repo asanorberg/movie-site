@@ -8,15 +8,16 @@ import {
 
 const FavoriteButton = ({ movie }) => {
   const dispatch = useDispatch();
-  const favorites = useSelector((state) => state.favorites.favoritesList);
+  const favorites = useSelector((state) => state.favorites.favoritesList); //Läs in favorites list
 
-  const isFavorite = favorites.some((favMovie) => favMovie.id === movie.id);
+  const isFavorite = favorites.some((favMovie) => favMovie.id === movie.id); //Kontrollera om filmen redan finns i listan
 
   const handleToggleFavorite = () => {
+    //Toggla Favorit
     if (isFavorite) {
-      dispatch(removeFavorite(movie.id));
+      dispatch(removeFavorite(movie.id)); //Om filmen finns i listan, ta bort
     } else {
-      dispatch(addFavorite(movie));
+      dispatch(addFavorite(movie)); //Om filmen inte finns i listan, lägg till
     }
   };
 
